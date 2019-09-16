@@ -1,7 +1,7 @@
 # music_app
 组件化架构实现 网易云音乐 app
 ## 基础组件介绍
-> lib_net_work：网络请求库，基于okhttp完成API数据请求
+> lib_network：网络请求库，基于okhttp完成API数据请求
 
 > lib_image_loader：图片加载库，基于glide完成图片加载
 
@@ -22,3 +22,6 @@
 > lib_qrcode：扫码库，提供扫码和生成二维码功能
 
 > lib_webview：webview库，完成webView的加载，缓存，重定向等功能
+
+## 三方库引用
+[MagicIndicator ViewPager 指示器框架](https://github.com/hackware1993/MagicIndicator)
