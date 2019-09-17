@@ -1,4 +1,4 @@
-package com.wuc.lib_net_work;
+package com.wuc.lib_network;
 
 import android.content.Context;
 

@@ -1,1 +1,25 @@
-include ':app_voice', ':lib_audio', ':lib_video', ':lib_base', ':lib_common_ui', ':lib_image_loader', ':lib_net_work', ':lib_pullalive', ':lib_qrcode', ':lib_share', ':lib_update', ':lib_webview'
+ext {
+    android = [
+            compileSdkVersion: 29,
+            applicationId    : 'com.wuc.voice',
+            minSdkVersion    : 29,
+            targetSdkVersion : 29,
+            versionCode      : 1,
+            versionName      : '1.0',
+            multiDexEnabled  : true,
+    ]
+    depsVersion = [
+            appcompat       : '1.1.0',
+            constraintlayout: '1.1.3',
+            magicindicator  : '1.5.0',
+            coreKtx         : '1.0.2',
+            kotlinStdlib    : '1.3.50',
+    ]
+    depsLibs = [
+            appcompat       : "androidx.appcompat:appcompat:${depsVersion.appcompat}",
+            constraintlayout: "androidx.constraintlayout:constraintlayout:${depsVersion.constraintlayout}",
+            magicindicator  : "com.github.hackware1993:MagicIndicator:${depsVersion.magicindicator}",
+            coreKtx         : "androidx.core:core-ktx:${depsVersion.coreKtx}",
+            kotlinStdlib    : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${depsVersion.kotlinStdlib}",
+    ]
+}
