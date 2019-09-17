@@ -53,4 +53,5 @@ dependencies {
     //业务基础库
     implementation project(':lib_base')
 
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 }

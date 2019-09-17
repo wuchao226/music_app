@@ -11,7 +11,7 @@ ext {
     depsVersion = [
             appcompat       : '1.1.0',
             constraintlayout: '1.1.3',
-            magicindicator  : '1.5.0',
+            magicindicator  : '1.6.0',
             coreKtx         : '1.0.2',
             kotlinStdlib    : '1.3.50',
     ]
