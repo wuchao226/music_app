@@ -1,7 +1,4 @@
 apply plugin: 'com.android.application'
-//引用kotlin提供的插件
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion this.rootProject.android.compileSdkVersion
     defaultConfig {
@@ -50,4 +47,5 @@ dependencies {
     //业务基础库
     implementation project(':lib_base')
 
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 }
