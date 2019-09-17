@@ -26,9 +26,6 @@ dependencies {
     def depsLibs = this.rootProject.depsLibs
     implementation depsLibs.appcompat
     implementation depsLibs.constraintlayout
-    //kotlin库引入
-    implementation depsLibs.coreKtx
-    implementation depsLibs.kotlinStdlib
 
     //基础UI库
     implementation project(':lib_common_ui')
