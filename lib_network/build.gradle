@@ -22,6 +22,11 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     def depsLibs = this.rootProject.depsLibs
-    implementation depsLibs.appcompat
-    implementation depsLibs.constraintlayout
+    //compile only和provided效果是一样的，只在编译的时候有效， 不参与打包
+    //implementation依赖的库只能自己库本身访问
+    //api和compile是一样的效果
+    compileOnly depsLibs.appcompat
+    compileOnly depsLibs.gson
+    //oKHttp依赖
+    api depsLibs.okhttp
 }

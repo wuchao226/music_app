@@ -22,6 +22,14 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     def depsLibs = this.rootProject.depsLibs
+    //compile only和provided效果是一样的，只在编译的时候有效， 不参与打包
+    //implementation依赖的库只能自己库本身访问
+    //api和compile是一样的效果
     implementation depsLibs.appcompat
-    implementation depsLibs.constraintlayout
+    //glide相关依赖
+    implementation depsLibs.glide
+    annotationProcessor depsLibs.glidecompiler
+    //占位主工程rxjava
+    compileOnly depsLibs.rxjava
+    compileOnly depsLibs.rxandroid
 }

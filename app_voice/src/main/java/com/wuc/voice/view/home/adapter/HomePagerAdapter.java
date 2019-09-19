@@ -33,7 +33,7 @@ public class HomePagerAdapter extends FragmentPagerAdapter {
         switch (type) {
             case CHANNEL.MINE_ID:
                 return MineFragment.newInstance();
-            case CHANNEL.DISCORY_ID:
+            case CHANNEL.DISCOVERY_ID:
                 return DiscoveryFragment.newInstance();
             case CHANNEL.FRIEND_ID:
                 return FriendFragment.newInstance();

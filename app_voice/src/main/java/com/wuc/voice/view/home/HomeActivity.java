@@ -34,7 +34,7 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
     /**
      * 指定首页要出现的卡片
      */
-    private static final CHANNEL[] CHANNELS = new CHANNEL[]{CHANNEL.MY, CHANNEL.DISCORY, CHANNEL.FRIEND};
+    private static final CHANNEL[] CHANNELS = new CHANNEL[]{CHANNEL.MY, CHANNEL.DISCOVERY, CHANNEL.FRIEND};
     private AppCompatImageView mToggleView;
     private AppCompatImageView mSearchView;
     private ViewPager mViewPager;
