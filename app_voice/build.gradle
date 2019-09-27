@@ -29,8 +29,13 @@ dependencies {
     implementation depsLibs.recyclerview
     implementation depsLibs.constraintlayout
     //rxjava库
-    implementation rootProject.depsLibs.rxjava
-    implementation rootProject.depsLibs.rxandroid
+    implementation depsLibs.rxjava
+    implementation depsLibs.rxandroid
+
+    //eventbus类库依赖
+    implementation depsLibs.eventbus
+    //greendao类库依赖
+    implementation depsLibs.greendao
 
     //gson解析库
     implementation depsLibs.gson
@@ -59,4 +64,6 @@ dependencies {
     implementation project(':lib_base')
 
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
 }

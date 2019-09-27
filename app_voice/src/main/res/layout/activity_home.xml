@@ -72,6 +72,59 @@
                 android:orientation="vertical"
                 android:layout_height="wrap_content">
 
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/avatar_view"
+                        android:layout_width="150dp"
+                        android:layout_marginTop="20dp"
+                        android:src="@mipmap/ic_launcher"
+                        android:layout_height="150dp"
+                        android:visibility="gone"
+                        android:layout_centerHorizontal="true" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/un_login_layout"
+                        android:layout_width="match_parent"
+                        android:layout_below="@+id/avatar_view"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:gravity="center"
+                            android:text="@string/home_login_tip"
+                            android:textColor="@color/color_333333"
+                            android:textSize="13sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:gravity="center"
+                            android:text="@string/home_login_tip_2"
+                            android:textColor="@color/color_333333"
+                            android:textSize="13sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="20dp"
+                            android:background="@drawable/bg_home_login"
+                            android:paddingStart="40dp"
+                            android:paddingTop="5dp"
+                            android:paddingEnd="40dp"
+                            android:paddingBottom="5dp"
+                            android:text="@string/home_login"
+                            android:textColor="@color/color_333333"
+                            android:textSize="15sp" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </RelativeLayout>
             </androidx.appcompat.widget.LinearLayoutCompat>
         </androidx.core.widget.NestedScrollView>
     </RelativeLayout>
