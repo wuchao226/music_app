@@ -10,7 +10,7 @@ import com.wuc.lib_common_ui.base.BaseActivity;
 import com.wuc.lib_network.okhttp.listener.DisposeDataListener;
 import com.wuc.voice.R;
 import com.wuc.voice.api.RequestCenter;
-import com.wuc.voice.model.login.LoginEvent;
+import com.wuc.voice.event.login.LoginEvent;
 import com.wuc.voice.model.user.User;
 import com.wuc.voice.utils.UserManager;
 

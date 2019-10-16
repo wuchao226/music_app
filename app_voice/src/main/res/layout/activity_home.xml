@@ -41,16 +41,27 @@
                 android:id="@+id/magic_indicator"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_toStartOf="@+id/search_view"
+                android:layout_toEndOf="@+id/toggle_view"
                 android:layout_marginStart="42dp"
                 android:layout_marginEnd="42dp"
                 android:layout_centerInParent="true" />
         </RelativeLayout>
 
+        <com.wuc.lib_audio.mediaplayer.view.BottomMusicView
+            android:id="@+id/bottom_view"
+            android:layout_width="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_height="wrap_content" />
+
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/view_pager"
             android:layout_below="@+id/title_layout"
+            android:layout_above="@id/bottom_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
+
+
     </RelativeLayout>
 
     <!-- 存放侧滑菜单  -->
