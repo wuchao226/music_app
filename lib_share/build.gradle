@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.mob.sdk'
 
 android {
     compileSdkVersion this.rootProject.android.compileSdkVersion
@@ -17,6 +18,63 @@ android {
     }
 
 }
+MobSDK {
+    appKey "2cc2dae640dce"
+    appSecret "6661106e16992cb38a08976d0fe1b734"
+
+    ShareSDK {
+        //平台配置信息
+        devInfo {
+            SinaWeibo {
+                appKey "568898243"
+                appSecret "38a4f8204cc784f81f9f0daaf31e02e3"
+                callbackUri "http://www.sharesdk.cn"
+                shareByAppClient false
+            }
+            Wechat {
+                appId "wx4868b35061f87885"
+                appSecret "64020361b8ec4c99936c0e3999a9f249"
+            }
+            QQ {
+                appId "100371282"
+                appKey "aed9b0303e3ed1e27bae87c33761161d"
+                shareByAppClient true
+            }
+            QZone {
+                AppId = "1105636158"
+                AppKey = "FAifDlwFtUbl4tig"
+                Id = "1"
+                ShareByAppClient = "true"
+                SortId = "1"
+            }
+            WechatMoments {
+                AppId = "wx9529c2408f3e0233"
+                AppSecret = "d4624c36b6795d1d99dcf0547af5443d"
+                BypassApproval = "true"
+                Enable = "true"
+                Id = "3"
+                ShareByAppClient = "true"
+                SortId = "3"
+            }
+
+            WechatFavorite {
+                AppId = "wx9529c2408f3e0233"
+                AppSecret = "d4624c36b6795d1d99dcf0547af5443d"
+                BypassApproval = "true"
+                Enable = "true"
+                Id = "4"
+                ShareByAppClient = "true"
+                SortId = "4"
+            }
+            Facebook {
+                appKey "1412473428822331"
+                appSecret "a42f4f3f867dc947b9ed6020c2e93558"
+                callbackUri "https://mob.com"
+            }
+        }
+    }
+
+}
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -26,4 +84,5 @@ dependencies {
     //implementation依赖的库只能自己库本身访问
     //api和compile是一样的效果
     compileOnly depsLibs.appcompat
+    compileOnly project(':lib_common_ui')
 }

@@ -23,4 +23,20 @@
         <attr name="civ_border_overlay" format="boolean" />
         <attr name="civ_circle_background_color" format="color" />
     </declare-styleable>
+
+    <declare-styleable name="VerticalItemView">
+        <attr name="iconWidth" format="dimension" />
+        <attr name="iconHeight" format="dimension" />
+        <attr name="icon" format="reference" />
+        <attr name="tipPaddingTop" format="dimension" />
+        <attr name="tipPaddingRight" format="dimension" />
+        <attr name="tipBg" format="reference" />
+        <attr name="tipTextColor" format="color" />
+        <attr name="tipTextSize" format="dimension" />
+        <attr name="tipText" format="string" />
+        <attr name="infoTextSize" format="dimension" />
+        <attr name="infoTextColor" format="color" />
+        <attr name="infoTextMarginTop" format="dimension" />
+        <attr name="infoText" format="string" />
+    </declare-styleable>
 </resources>
