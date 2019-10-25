@@ -39,4 +39,30 @@
         <attr name="infoTextMarginTop" format="dimension" />
         <attr name="infoText" format="string" />
     </declare-styleable>
+
+    <declare-styleable name="HorizontalItemView">
+        <attr name="paddingLeft" format="dimension" />
+        <attr name="paddingRight" format="dimension" />
+        <attr name="paddingTop" format="dimension" />
+        <attr name="paddingBottom" format="dimension" />
+        <attr name="hIconWidth" format="dimension" />
+        <attr name="hIconHeight" format="dimension" />
+        <attr name="hIcon" format="reference" />
+        <attr name="iconPaddingRight" format="dimension" />
+        <attr name="tileTextSize" format="dimension" />
+        <attr name="tileTextColor" format="color" />
+        <attr name="tileText" format="string" />
+        <attr name="rightTextSize" format="dimension" />
+        <attr name="rightTextColor" format="color" />
+        <attr name="rightText" format="string" />
+        <attr name="rightIcon" format="reference" />
+        <attr name="rightIconWidth" format="dimension" />
+        <attr name="rightIconHeight" format="dimension" />
+        <attr name="rightIconMarginLeft" format="dimension" />
+        <attr name="hTipTextSize" format="dimension" />
+        <attr name="hTipTextColor" format="color" />
+        <attr name="hTipText" format="string" />
+        <attr name="hTipPaddingLeft" format="dimension" />
+        <attr name="hTipVisiblity" format="boolean" />
+    </declare-styleable>
 </resources>

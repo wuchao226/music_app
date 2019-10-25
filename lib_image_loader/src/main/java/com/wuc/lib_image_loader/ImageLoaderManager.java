@@ -70,6 +70,28 @@ public class ImageLoaderManager {
     }
 
     /**
+     * url 转 Bitmap
+     *
+     * @param context context
+     * @param url     url
+     * @return Bitmap
+     */
+    public Bitmap getBitmapForUrl(Context context, String url) {
+        final Bitmap[] bitmap = {null};
+        Glide.with(context)
+                .asBitmap()
+                .load(url)
+                .apply(initCommonRequestOptions())
+                .into(new SimpleTarget<Bitmap>() {
+                    @Override
+                    public void onResourceReady(@NonNull Bitmap resource, @Nullable Transition<? super Bitmap> transition) {
+                        bitmap[0] = resource;
+                    }
+                });
+        return bitmap[0];
+    }
+
+    /**
      * 为 ViewGroup 设置背景图
      *
      * @param viewGroup viewGroup

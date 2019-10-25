@@ -28,4 +28,7 @@ dependencies {
     implementation depsLibs.appcompat
     compileOnly depsLibs.recyclerview
     api depsLibs.magicindicator
+
+    //图片加载库
+    implementation project(':lib_image_loader')
 }

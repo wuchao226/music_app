@@ -104,7 +104,7 @@ public class VerticalItemView extends RelativeLayout {
         textParams.addRule(RelativeLayout.CENTER_HORIZONTAL);
         rootLayout.addView(mInfoView, textParams);
 
-        mTipView = new AppCompatTextView(mContext);
+       /* mTipView = new AppCompatTextView(mContext);
         mTipView.setId(R.id.vertical_tip_id);
         mTipView.setBackground(mTipBg);
         mTipView.setText(mTipText);
@@ -115,7 +115,7 @@ public class VerticalItemView extends RelativeLayout {
         tipParams.addRule(RelativeLayout.RIGHT_OF, R.id.vertical_image_id);
         tipParams.addRule(RelativeLayout.ABOVE, R.id.vertical_image_id);
         tipParams.setMargins(0, mTipPaddingTop, mTipPaddingRight, 0);
-        rootLayout.addView(mTipView, tipParams);
+        rootLayout.addView(mTipView, tipParams);*/
         return rootLayout;
     }
 }

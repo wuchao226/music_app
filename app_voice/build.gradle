@@ -26,6 +26,7 @@ dependencies {
     //implementation依赖的库只能自己库本身访问
     //api和compile是一样的效果
     implementation depsLibs.appcompat
+    implementation depsLibs.swiperefreshlayout
     implementation depsLibs.material
     implementation depsLibs.recyclerview
     implementation depsLibs.constraintlayout

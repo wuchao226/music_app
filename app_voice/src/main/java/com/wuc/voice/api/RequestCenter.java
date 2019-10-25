@@ -5,6 +5,9 @@ import com.wuc.lib_network.okhttp.listener.DisposeDataHandle;
 import com.wuc.lib_network.okhttp.listener.DisposeDataListener;
 import com.wuc.lib_network.okhttp.request.CommonRequest;
 import com.wuc.lib_network.okhttp.request.RequestParams;
+import com.wuc.voice.model.discory.BaseRecommandModel;
+import com.wuc.voice.model.discory.BaseRecommandMoreModel;
+import com.wuc.voice.model.friend.BaseFriendModel;
 import com.wuc.voice.model.user.User;
 
 /**
@@ -38,6 +41,20 @@ public class RequestCenter {
     public static void getRequest(String url, RequestParams params, DisposeDataListener listener, Class<?> clazz) {
         CommonOkHttpClient.get(CommonRequest.createGetRequest(url, params),
                 new DisposeDataHandle(listener, clazz));
+    }
+
+    public static void requestRecommandData(DisposeDataListener listener) {
+        RequestCenter.getRequest(HttpConstants.HOME_RECOMMAND, null, listener,
+                BaseRecommandModel.class);
+    }
+
+    public static void requestRecommandMore(DisposeDataListener listener) {
+        RequestCenter.getRequest(HttpConstants.HOME_RECOMMAND_MORE, null, listener,
+                BaseRecommandMoreModel.class);
+    }
+
+    public static void requestFriendData(DisposeDataListener listener) {
+        RequestCenter.getRequest(HttpConstants.HOME_FRIEND, null, listener, BaseFriendModel.class);
     }
 
     /**
