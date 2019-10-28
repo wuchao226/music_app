@@ -1,19 +1,26 @@
 package com.wuc.voice.view.home;
 
 import android.content.Context;
+import android.content.IntentFilter;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.wuc.lib_audio.app.AudioHelper;
 import com.wuc.lib_audio.mediaplayer.model.AudioBean;
+import com.wuc.lib_base.router.RouterPath;
 import com.wuc.lib_common_ui.base.BaseActivity;
+import com.wuc.lib_common_ui.base.constant.Constant;
 import com.wuc.lib_common_ui.pager_indicator.ScaleTransitionPagerTitleView;
 import com.wuc.lib_image_loader.ImageLoaderManager;
+import com.wuc.lib_update.app.UpdateHelper;
 import com.wuc.voice.R;
 import com.wuc.voice.event.login.LoginEvent;
 import com.wuc.voice.model.CHANNEL;
+import com.wuc.voice.receiver.UpdateReceiver;
 import com.wuc.voice.utils.UserManager;
 import com.wuc.voice.view.home.adapter.HomePagerAdapter;
 import com.wuc.voice.view.login.LoginActivity;
@@ -36,6 +43,7 @@ import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.viewpager.widget.ViewPager;
 
 
@@ -61,14 +69,24 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
      * data
      */
     private ArrayList<AudioBean> mLists = new ArrayList<>();
+    private UpdateReceiver mReceiver = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        registerBroadcastReceiver();
         EventBus.getDefault().register(this);
         setContentView(R.layout.activity_home);
         initView();
         initData();
+    }
+
+    private void registerBroadcastReceiver() {
+        if (mReceiver == null) {
+            mReceiver = new UpdateReceiver();
+            LocalBroadcastManager.getInstance(this)
+                    .registerReceiver(mReceiver, new IntentFilter(UpdateHelper.UPDATE_ACTION));
+        }
     }
 
     private void initView() {
@@ -88,7 +106,9 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
         mUnLogginLayout = findViewById(R.id.un_login_layout);
         mUnLogginLayout.setOnClickListener(this);
         mAvatarView = findViewById(R.id.avatar_view);
-
+        findViewById(R.id.online_music_view).setOnClickListener(this);
+        findViewById(R.id.check_update_view).setOnClickListener(this);
+        findViewById(R.id.exit_layout).setOnClickListener(this);
     }
 
     private void initData() {
@@ -160,6 +180,11 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
         ViewPagerHelper.bind(mMagicIndicator, mViewPager);
     }
 
+    @Override
+    public void doCameraPermission() {
+        ARouter.getInstance().build(RouterPath.QrCode.PATH_CAPTURE_ACTIVITY).navigation();
+    }
+
     /**
      * 处理登陆事件
      */
@@ -175,11 +200,44 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
     protected void onDestroy() {
         super.onDestroy();
         EventBus.getDefault().unregister(this);
+        unRegisterBroadcastReceiver();
+    }
+
+    private void unRegisterBroadcastReceiver() {
+        if (mReceiver != null) {
+            LocalBroadcastManager.getInstance(this).unregisterReceiver(mReceiver);
+        }
     }
 
     @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            //退出不销毁task中activity
+            moveTaskToBack(true);
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
+    /**
+     * 接收Update发送的广播
+     */
+    /*public class UpdateReceiver extends BroadcastReceiver {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            Log.d("install2", "home");
+            //启动安装页面
+            context.startActivity(
+                    Utils.getInstallApkIntent(context, intent.getStringExtra(UpdateHelper.UPDATE_FILE_KEY)));
+        }
+    }*/
+    @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            case R.id.exit_layout:
+                finish();
+                System.exit(0);
+                break;
             case R.id.toggle_view:
                 if (mDrawerLayout.isDrawerOpen(GravityCompat.START)) {
                     mDrawerLayout.closeDrawer(GravityCompat.START);
@@ -196,8 +254,44 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
                     mDrawerLayout.closeDrawer(GravityCompat.START);
                 }
                 break;
+            case R.id.home_qrcode:
+                if (hasPermission(Constant.HARDWEAR_CAMERA_PERMISSION)) {
+                    doCameraPermission();
+                } else {
+                    requestPermission(Constant.HARDWEAR_CAMERA_CODE, Constant.HARDWEAR_CAMERA_PERMISSION);
+                }
+                break;
+            case R.id.home_music:
+                //shareFriend();
+                goToMusic();
+                break;
+            case R.id.online_music_view:
+                //跳到指定webactivity
+                gotoWebView("https://www.imooc.com");
+                break;
+            case R.id.check_update_view:
+                checkUpdate();
+                break;
             default:
                 break;
         }
+    }
+
+    private void goToMusic() {
+        ARouter.getInstance().build(RouterPath.Audio.PATH_MUSIC_ACTIVITY).navigation();
+    }
+
+    private void gotoWebView(String url) {
+        ARouter.getInstance()
+                .build(RouterPath.WebView.PATH_WEB_ACTIVITY)
+                .withString("url", url)
+                .navigation();
+    }
+
+    /**
+     * 启动检查更新
+     */
+    private void checkUpdate() {
+        UpdateHelper.checkUpdate(this);
     }
 }

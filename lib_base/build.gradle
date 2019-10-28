@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.alibaba.arouter'
 
 android {
     compileSdkVersion this.rootProject.android.compileSdkVersion
@@ -7,6 +8,13 @@ android {
         targetSdkVersion this.rootProject.android.targetSdkVersion
         versionCode 1
         versionName "1.0"
+
+        //ARouter配置
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
     }
 
     buildTypes {
@@ -25,5 +33,9 @@ dependencies {
     //compile only和provided效果是一样的，只在编译的时候有效， 不参与打包
     //implementation依赖的库只能自己库本身访问
     //api和compile是一样的效果
-    compileOnly depsLibs.appcompat
+    implementation depsLibs.appcompat
+
+    //占位主工程arouter库
+    compileOnly depsLibs.arouterapi
+    annotationProcessor depsLibs.aroutercompiler
 }

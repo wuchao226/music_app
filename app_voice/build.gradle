@@ -1,5 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.mob.sdk'
+apply plugin: 'com.alibaba.arouter'
+
 android {
     compileSdkVersion this.rootProject.android.compileSdkVersion
     defaultConfig {
@@ -10,6 +12,13 @@ android {
         versionName this.rootProject.android.versionName
 
         multiDexEnabled this.rootProject.android.multiDexEnabled
+
+        //ARouter配置
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
     }
     buildTypes {
         release {
@@ -30,6 +39,12 @@ dependencies {
     implementation depsLibs.material
     implementation depsLibs.recyclerview
     implementation depsLibs.constraintlayout
+    implementation depsLibs.localbroadcastmanager
+
+    //arouter库
+    implementation depsLibs.arouterapi
+    annotationProcessor depsLibs.aroutercompiler
+
     //rxjava库
     implementation depsLibs.rxjava
     implementation depsLibs.rxandroid
