@@ -29,6 +29,6 @@ dependencies {
     compileOnly depsLibs.recyclerview
     api depsLibs.magicindicator
 
-    //图片加载库
-    implementation project(':lib_image_loader')
+    //图片加载库,可以用arouter去掉此依赖
+    compileOnly project(':lib_image_loader')
 }

@@ -1,12 +1,15 @@
 package com.wuc.voice.view.home;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
+import android.widget.Toast;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.wuc.lib_audio.app.AudioHelper;
@@ -16,6 +19,7 @@ import com.wuc.lib_common_ui.base.BaseActivity;
 import com.wuc.lib_common_ui.base.constant.Constant;
 import com.wuc.lib_common_ui.pager_indicator.ScaleTransitionPagerTitleView;
 import com.wuc.lib_image_loader.ImageLoaderManager;
+import com.wuc.lib_qrcode.zxing.app.CaptureActivity;
 import com.wuc.lib_update.app.UpdateHelper;
 import com.wuc.voice.R;
 import com.wuc.voice.event.login.LoginEvent;
@@ -57,13 +61,13 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
      * 指定首页要出现的卡片
      */
     private static final CHANNEL[] CHANNELS = new CHANNEL[]{CHANNEL.MY, CHANNEL.DISCOVERY, CHANNEL.FRIEND};
+    private static final int REQUEST_QRCODE = 0x01;
     private AppCompatImageView mToggleView;
     private AppCompatImageView mSearchView;
     private ViewPager mViewPager;
     private DrawerLayout mDrawerLayout;
     private LinearLayoutCompat mUnLogginLayout;
     private AppCompatImageView mAvatarView;
-
     private HomePagerAdapter mAdapter;
     /*
      * data
@@ -108,6 +112,7 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
         mAvatarView = findViewById(R.id.avatar_view);
         findViewById(R.id.online_music_view).setOnClickListener(this);
         findViewById(R.id.check_update_view).setOnClickListener(this);
+        findViewById(R.id.home_qrcode).setOnClickListener(this);
         findViewById(R.id.exit_layout).setOnClickListener(this);
     }
 
@@ -182,7 +187,33 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
 
     @Override
     public void doCameraPermission() {
-        ARouter.getInstance().build(RouterPath.QrCode.PATH_CAPTURE_ACTIVITY).navigation();
+       /* ARouter.getInstance()
+                .build(RouterPath.QrCode.PATH_CAPTURE_ZXING_ACTIVITY)
+                .navigation(this, REQUEST_QRCODE);*/
+        ARouter.getInstance()
+                .build(RouterPath.QrCode.PATH_CAPTURE_ZBAR_ACTIVITY)
+                .navigation(this, REQUEST_QRCODE);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        switch (requestCode) {
+            case REQUEST_QRCODE:
+                if (resultCode == Activity.RESULT_OK) {
+                    String code = data.getStringExtra(CaptureActivity.SCAN_RESULT);
+                    if (code.contains("http") || code.contains("https")) {
+                        /*Intent intent = new Intent(mContext, AdBrowserActivity.class);
+                        intent.putExtra(AdBrowserActivity.KEY_URL, code);
+                        startActivity(intent);*/
+                    } else {
+                        Toast.makeText(this, code, Toast.LENGTH_SHORT).show();
+                    }
+                    Toast.makeText(this, code, Toast.LENGTH_SHORT).show();
+                }
+                break;
+            default:
+        }
     }
 
     /**
@@ -219,18 +250,6 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
         return super.onKeyDown(keyCode, event);
     }
 
-    /**
-     * 接收Update发送的广播
-     */
-    /*public class UpdateReceiver extends BroadcastReceiver {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            Log.d("install2", "home");
-            //启动安装页面
-            context.startActivity(
-                    Utils.getInstallApkIntent(context, intent.getStringExtra(UpdateHelper.UPDATE_FILE_KEY)));
-        }
-    }*/
     @Override
     public void onClick(View v) {
         switch (v.getId()) {

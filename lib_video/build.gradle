@@ -39,5 +39,5 @@ dependencies {
     annotationProcessor depsLibs.aroutercompiler
 
     //业务基础库
-    implementation project(':lib_base')
+    compileOnly project(':lib_base')
 }

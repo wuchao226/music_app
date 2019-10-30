@@ -1,18 +1,18 @@
 package com.wuc.voice.application;
 
-import android.app.Application;
-
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.wuc.lib_audio.app.AudioHelper;
 import com.wuc.lib_share.share.ShareManager;
 import com.wuc.lib_update.app.UpdateHelper;
+
+import androidx.multidex.MultiDexApplication;
 
 /**
  * @author: wuchao
  * @date: 2019-10-09 18:01
  * @desciption:
  */
-public class VoiceApplication extends Application {
+public class VoiceApplication extends MultiDexApplication {
 
     private static VoiceApplication mApplication = null;
 

@@ -36,8 +36,8 @@ dependencies {
     //implementation依赖的库只能自己库本身访问
     //api和compile是一样的效果
     //占位主工程android原生库
-    implementation depsLibs.appcompat
-    implementation depsLibs.constraintlayout
+    compileOnly depsLibs.appcompat
+    compileOnly depsLibs.constraintlayout
     compileOnly depsLibs.appcompat
     compileOnly depsLibs.material
     compileOnly depsLibs.recyclerview

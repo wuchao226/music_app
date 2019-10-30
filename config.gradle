@@ -27,6 +27,7 @@ ext {
             glidecompiler        : '4.9.0',
             eventbus             : '3.1.1',
             greendao             : '3.2.2',
+            multidex             : '2.0.1',
     ]
     depsLibs = [
             //support
@@ -36,6 +37,7 @@ ext {
             constraintlayout      : "androidx.constraintlayout:constraintlayout:${depsVersion.constraintlayout}",
             material              : "com.google.android.material:material:${depsVersion.material}",
             recyclerview          : "androidx.recyclerview:recyclerview:${depsVersion.recyclerview}",
+            multidex              : "androidx.multidex:multidex:${depsVersion.multidex}",
             magicindicator        : "com.github.hackware1993:MagicIndicator:${depsVersion.magicindicator}",
             //http
             okhttp                : "com.squareup.okhttp3:okhttp:${depsVersion.okhttp}",
@@ -58,5 +60,6 @@ ext {
             eventbus              : "org.greenrobot:eventbus:${depsVersion.eventbus}",
             //greendao
             greendao              : "org.greenrobot:greendao:${depsVersion.greendao}",
+
     ]
 }

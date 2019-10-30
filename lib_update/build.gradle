@@ -33,8 +33,8 @@ dependencies {
     //compile only和provided效果是一样的，只在编译的时候有效， 不参与打包
     //implementation依赖的库只能自己库本身访问
     //api和compile是一样的效果
-    implementation depsLibs.appcompat
-    implementation depsLibs.localbroadcastmanager
+    compileOnly depsLibs.appcompat
+    compileOnly depsLibs.localbroadcastmanager
     compileOnly project(':lib_network')
     compileOnly project(':lib_common_ui')
 
@@ -43,5 +43,5 @@ dependencies {
     annotationProcessor depsLibs.aroutercompiler
 
     //业务基础库
-    implementation project(':lib_base')
+    compileOnly project(':lib_base')
 }

@@ -26,7 +26,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    configurations {
+        cleanedAnnotations
+        compile.exclude group: 'org.jetbrains' , module:'annotations'
+    }
 }
+
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -40,6 +45,7 @@ dependencies {
     implementation depsLibs.recyclerview
     implementation depsLibs.constraintlayout
     implementation depsLibs.localbroadcastmanager
+    implementation depsLibs.multidex
 
     //arouter库
     implementation depsLibs.arouterapi

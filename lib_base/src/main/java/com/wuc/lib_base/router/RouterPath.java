@@ -8,7 +8,8 @@ package com.wuc.lib_base.router;
 public class RouterPath {
 
     public class QrCode {
-        public static final String PATH_CAPTURE_ACTIVITY = "/qrcode/capture_activity";
+        public static final String PATH_CAPTURE_ZXING_ACTIVITY = "/qrcode/capture_zxing_activity";
+        public static final String PATH_CAPTURE_ZBAR_ACTIVITY = "/qrcode/capture_zbar_activity";
     }
 
     public class WebView {
