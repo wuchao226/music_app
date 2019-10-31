@@ -12,8 +12,8 @@ public class RouterPath {
         public static final String PATH_CAPTURE_ZBAR_ACTIVITY = "/qrcode/capture_zbar_activity";
     }
 
-    public class WebView {
-        public static final String PATH_WEB_ACTIVITY = "/webview/web_activity";
+    public class Web {
+        public static final String PATH_WEB = "/webview/web_activity";
     }
 
     /**

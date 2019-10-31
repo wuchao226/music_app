@@ -34,7 +34,11 @@ dependencies {
     //implementation依赖的库只能自己库本身访问
     //api和compile是一样的效果
     compileOnly depsLibs.appcompat
+    compileOnly depsLibs.gson
+    implementation 'com.alibaba:fastjson:1.2.61'
     //占位主工程arouter库
     compileOnly depsLibs.arouterapi
     annotationProcessor depsLibs.aroutercompiler
+    compileOnly project(path: ':lib_base')
+    compileOnly project(path: ':lib_common_ui')
 }

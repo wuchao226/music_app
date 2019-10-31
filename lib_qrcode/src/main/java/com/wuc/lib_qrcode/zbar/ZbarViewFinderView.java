@@ -1,6 +1,7 @@
 package com.wuc.lib_qrcode.zbar;
 
 import android.content.Context;
+import android.graphics.Canvas;
 import android.graphics.Color;
 import android.util.AttributeSet;
 
@@ -23,5 +24,10 @@ public class ZbarViewFinderView extends ViewFinderView {
         setLaserEnabled(true);
         mLaserPaint.setColor(Color.YELLOW);
         mBorderPaint.setColor(Color.YELLOW);
+    }
+
+    @Override
+    public void drawLaser(Canvas canvas) {
+        super.drawLaser(canvas);
     }
 }

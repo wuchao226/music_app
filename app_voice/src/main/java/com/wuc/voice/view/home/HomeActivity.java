@@ -302,7 +302,7 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
 
     private void gotoWebView(String url) {
         ARouter.getInstance()
-                .build(RouterPath.WebView.PATH_WEB_ACTIVITY)
+                .build(RouterPath.Web.PATH_WEB)
                 .withString("url", url)
                 .navigation();
     }
