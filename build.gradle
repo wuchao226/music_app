@@ -7,9 +7,9 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.5.1'
+        classpath 'com.android.tools.build:gradle:4.0.2'
         //greendao插件依赖
-        classpath 'org.greenrobot:greendao-gradle-plugin:3.2.2'
+        classpath 'org.greenrobot:greendao-gradle-plugin:3.3.0'
         //shareSDK 分享
         classpath "com.mob.sdk:MobSDK:2018.0319.1724"
         //ARouter插件依赖
