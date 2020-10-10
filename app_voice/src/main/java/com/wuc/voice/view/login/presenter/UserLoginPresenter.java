@@ -7,8 +7,8 @@ import com.wuc.voice.api.RequestCenter;
 import com.wuc.voice.model.login.LoginEvent;
 import com.wuc.voice.model.user.User;
 import com.wuc.voice.utils.UserManager;
-import com.wuc.voice.view.login.IUserLoginPresenter;
-import com.wuc.voice.view.login.IUserLoginView;
+import com.wuc.voice.view.login.inner.IUserLoginPresenter;
+import com.wuc.voice.view.login.inner.IUserLoginView;
 import org.greenrobot.eventbus.EventBus;
 
 /**

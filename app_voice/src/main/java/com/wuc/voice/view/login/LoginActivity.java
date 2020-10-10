@@ -8,6 +8,7 @@ import android.view.View;
 import com.wuc.lib_common_ui.base.BaseActivity;
 import com.wuc.voice.R;
 
+import com.wuc.voice.view.login.inner.IUserLoginView;
 import com.wuc.voice.view.login.presenter.UserLoginPresenter;
 
 /**

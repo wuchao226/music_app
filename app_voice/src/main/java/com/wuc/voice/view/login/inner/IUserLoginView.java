@@ -1,4 +1,4 @@
-package com.wuc.voice.view.login;
+package com.wuc.voice.view.login.inner;
 
 /**
  * @author : wuchao5
