@@ -1,1 +1,13 @@
-include ':app_voice', ':lib_audio', ':lib_video', ':lib_base', ':lib_common_ui', ':lib_image_loader', ':lib_network', ':lib_pullalive', ':lib_qrcode', ':lib_share', ':lib_update', ':lib_webview'
+include ':ft_login'
+include ':app_voice',
+    ':lib_audio',
+    ':lib_video',
+    ':lib_base',
+    ':lib_common_ui',
+    ':lib_image_loader',
+    ':lib_network',
+    ':lib_pullalive',
+    ':lib_qrcode',
+    ':lib_share',
+    ':lib_update',
+    ':lib_webview'

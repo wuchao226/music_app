@@ -4,6 +4,7 @@ apply plugin: 'com.alibaba.arouter'
 
 android {
     compileSdkVersion this.rootProject.android.compileSdkVersion
+    buildToolsVersion this.rootProject.android.buildToolsVersion
     defaultConfig {
         applicationId this.rootProject.android.applicationId
         minSdkVersion this.rootProject.android.minSdkVersion

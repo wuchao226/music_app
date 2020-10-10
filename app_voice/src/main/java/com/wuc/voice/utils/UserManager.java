@@ -23,7 +23,7 @@ public class UserManager {
      *
      * @param user user
      */
-    public void saveUser(User user) {
+    public void setUser(User user) {
         mUser = user;
         saveLocal(user);
     }
