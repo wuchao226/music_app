@@ -2,6 +2,9 @@
 组件化架构实现 网易云音乐 app
 ## 效果图
 ![image](https://github.com/wuchao226/music_app/blob/master/images/preview.gif)
+
+
+![](https://github.com/wuchao226/music_app/blob/master/images/preview2.gif)
 ## 基础组件介绍
 > lib_network：网络请求库，基于okhttp完成API数据请求
 
