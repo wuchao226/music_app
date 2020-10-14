@@ -5,7 +5,8 @@ import android.content.Context;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
-
+import androidx.appcompat.widget.AppCompatImageView;
+import com.wuc.ft_login.LoginActivity;
 import com.wuc.lib_audio.app.AudioHelper;
 import com.wuc.lib_common_ui.MultiImageViewLayout;
 import com.wuc.lib_common_ui.recyclerview.MultiItemTypeAdapter;
@@ -19,11 +20,7 @@ import com.wuc.lib_video.videoplayer.module.VideoValue;
 import com.wuc.voice.R;
 import com.wuc.voice.model.friend.FriendBodyValue;
 import com.wuc.voice.utils.UserManager;
-import com.wuc.voice.view.login.LoginActivity;
-
 import java.util.List;
-
-import androidx.appcompat.widget.AppCompatImageView;
 
 /**
  * @author: wuchao

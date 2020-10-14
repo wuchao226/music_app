@@ -1,12 +1,12 @@
 package com.wuc.voice.model.discory;
 
 
-import com.wuc.voice.model.BaseModel;
+import java.io.Serializable;
 
 /**
  * @文件描述：推荐实体
  */
-public class RecommandBodyValue extends BaseModel {
+public class RecommandBodyValue implements Serializable {
 
   public int type;
   public String avatr;

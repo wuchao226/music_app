@@ -1,12 +1,12 @@
 package com.wuc.voice.model.user;
 
 
-import com.wuc.voice.model.BaseModel;
+import java.io.Serializable;
 
 /**
  * 用户数据协议
  */
-public class User extends BaseModel {
+public class User implements Serializable {
   public int ecode;
   public String emsg;
   public UserContent data;

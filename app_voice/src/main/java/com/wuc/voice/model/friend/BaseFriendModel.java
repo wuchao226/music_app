@@ -1,12 +1,12 @@
 package com.wuc.voice.model.friend;
 
 
-import com.wuc.voice.model.BaseModel;
+import java.io.Serializable;
 
 /**
  * Created by renzhiqiang on
  */
-public class BaseFriendModel extends BaseModel {
+public class BaseFriendModel implements Serializable {
 
   public String ecode;
   public String emsg;

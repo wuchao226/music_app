@@ -86,5 +86,7 @@ dependencies {
     implementation project(':lib_pullalive')
     //业务基础库
     implementation project(':lib_base')
+    //login模块
+    implementation project(':ft_login')
 
 }

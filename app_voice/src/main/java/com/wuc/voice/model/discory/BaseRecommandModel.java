@@ -1,12 +1,12 @@
 package com.wuc.voice.model.discory;
 
 
-import com.wuc.voice.model.BaseModel;
+import java.io.Serializable;
 
 /**
  * Created by renzhiqiang on 19/6/8.
  */
-public class BaseRecommandModel extends BaseModel {
+public class BaseRecommandModel implements Serializable {
 
   public String ecode;
   public String emsg;

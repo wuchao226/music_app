@@ -1,8 +1,7 @@
 package com.wuc.voice.model.discory;
 
 
-import com.wuc.voice.model.BaseModel;
-
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
@@ -10,7 +9,7 @@ import java.util.ArrayList;
  * @function:
  * @date: 19/6/2
  */
-public class RecommandHeadValue extends BaseModel {
+public class RecommandHeadValue implements Serializable {
 
     public ArrayList<String> ads;
     public ArrayList<RecommandMiddleValue> middle;

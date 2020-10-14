@@ -1,9 +1,9 @@
 package com.wuc.voice.model.discory;
 
 
-import com.wuc.voice.model.BaseModel;
+import java.io.Serializable;
 
-public class RecommandFooterValue extends BaseModel {
+public class RecommandFooterValue implements Serializable {
 
   public String info;
   public String imageUrl;
