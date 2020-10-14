@@ -24,7 +24,6 @@ import com.wuc.lib_video.videoplayer.utils.Utils;
  */
 public class VideoSlot implements CustomVideoView.VideoPlayerListener {
 
-
     @Autowired(name = RouterPath.Audio.PATH_AUDIO_SERVICE)
     protected AudioService mAudioService;
 

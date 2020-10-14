@@ -7,36 +7,40 @@ package com.wuc.lib_base.router;
  */
 public class RouterPath {
 
-    public class QrCode {
-        public static final String PATH_CAPTURE_ZXING_ACTIVITY = "/qrcode/capture_zxing_activity";
-        public static final String PATH_CAPTURE_ZBAR_ACTIVITY = "/qrcode/capture_zbar_activity";
-    }
+  public class QrCode {
+    public static final String PATH_CAPTURE_ZXING_ACTIVITY = "/qrcode/capture_zxing_activity";
+    public static final String PATH_CAPTURE_ZBAR_ACTIVITY = "/qrcode/capture_zbar_activity";
+  }
 
-    public class Web {
-        public static final String PATH_WEB = "/webview/web_activity";
-    }
+  public class Web {
+    public static final String PATH_WEB = "/webview/web_activity";
+  }
 
+  public class Login {
+    public static final String PATH_LOGIN = "/login/login_service";
+  }
+
+  /**
+   * 音频模块
+   */
+  public class Audio {
     /**
-     * 音频模块
+     * 音频服务router
      */
-    public class Audio {
-        /**
-         * 音频服务router
-         */
-        public static final String PATH_AUDIO_SERVICE = "/audio/audio_service";
-        /**
-         * 播放音乐
-         */
-        public static final String PATH_MUSIC_ACTIVITY = "/audio/music_activity";
-    }
-
+    public static final String PATH_AUDIO_SERVICE = "/audio/audio_service";
     /**
-     * 首页更新服务模块
+     * 播放音乐
      */
-    public class Voice {
-        /**
-         * 首页更新服务router
-         */
-        public static final String PATH_VOICE_SERVICE = "/voice/voice_service";
-    }
+    public static final String PATH_MUSIC_ACTIVITY = "/audio/music_activity";
+  }
+
+  /**
+   * 首页更新服务模块
+   */
+  public class Voice {
+    /**
+     * 首页更新服务router
+     */
+    public static final String PATH_VOICE_SERVICE = "/voice/voice_service";
+  }
 }

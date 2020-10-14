@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.alibaba.arouter'
 
 android {
   compileSdkVersion this.rootProject.android.compileSdkVersion
@@ -10,8 +11,12 @@ android {
     versionCode 1
     versionName "1.0"
 
-    testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-    consumerProguardFiles "consumer-rules.pro"
+    //ARouter配置
+    javaCompileOptions {
+      annotationProcessorOptions {
+        arguments = [AROUTER_MODULE_NAME: project.getName(), AROUTER_GENERATE_DOC: "enable"]
+      }
+    }
   }
 
   buildTypes {
@@ -24,8 +29,26 @@ android {
 
 dependencies {
   implementation fileTree(dir: "libs", include: ["*.jar"])
-  implementation 'androidx.appcompat:appcompat:1.2.0'
-  testImplementation 'junit:junit:4.12'
-  androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-  androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+  def depsLibs = this.rootProject.depsLibs
+  compileOnly depsLibs.appcompat
+  compileOnly depsLibs.swiperefreshlayout
+  compileOnly depsLibs.material
+  compileOnly depsLibs.recyclerview
+  compileOnly depsLibs.constraintlayout
+  //eventbus类库依赖
+  compileOnly depsLibs.eventbus
+  //gson解析库
+  compileOnly depsLibs.gson
+  //arouter库
+  compileOnly(depsLibs.arouterapi) {
+    exclude group: 'com.android.support'
+  }
+  annotationProcessor depsLibs.aroutercompiler
+
+  //网络请求库
+  compileOnly project(':lib_network')
+  //业务基础库
+  compileOnly project(':lib_base')
+  //基础UI库
+  compileOnly project(':lib_common_ui')
 }

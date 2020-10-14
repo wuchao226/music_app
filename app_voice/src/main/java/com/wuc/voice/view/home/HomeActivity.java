@@ -7,6 +7,7 @@ import android.content.IntentFilter;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Toast;
@@ -15,6 +16,7 @@ import com.alibaba.android.arouter.launcher.ARouter;
 import com.wuc.lib_audio.app.AudioHelper;
 import com.wuc.lib_audio.mediaplayer.model.AudioBean;
 import com.wuc.lib_base.router.RouterPath;
+import com.wuc.lib_base.service.ft_login.service.LoginImpl;
 import com.wuc.lib_common_ui.base.BaseActivity;
 import com.wuc.lib_common_ui.base.constant.Constant;
 import com.wuc.lib_common_ui.pager_indicator.ScaleTransitionPagerTitleView;
@@ -223,7 +225,7 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
     mUnLogginLayout.setVisibility(View.GONE);
     mAvatarView.setVisibility(View.VISIBLE);
     ImageLoaderManager.getInstance().displayImageForCircle(mAvatarView,
-        UserManager.getInstance().getUser().data.photoUrl);
+        LoginImpl.getInstance().getUserInfo().data.photoUrl);
   }
 
   @Override
@@ -266,10 +268,10 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
       case R.id.search_view:
         break;
       case R.id.un_login_layout:
-        if (!UserManager.getInstance().hasLogined()) {
-          LoginActivity.start(this);
+        if (!LoginImpl.getInstance().hasLogin()) {
+          LoginImpl.getInstance().login(this);
         } else {
-          mDrawerLayout.closeDrawer(GravityCompat.START);
+          mDrawerLayout.closeDrawer(Gravity.LEFT);
         }
         break;
       case R.id.home_qrcode:
