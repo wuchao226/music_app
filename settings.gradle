@@ -1,7 +1,7 @@
 include ':ft_home'
 include ':ft_login'
 include ':app_voice',
-    ':lib_audio',
+    ':ft_audio',
     ':lib_video',
     ':lib_base',
     ':lib_common_ui',

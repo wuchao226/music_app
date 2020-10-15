@@ -50,7 +50,7 @@
         android:layout_toEndOf="@+id/toggle_view" />
     </RelativeLayout>
 
-    <com.wuc.lib_audio.mediaplayer.view.BottomMusicView
+    <com.wuc.ft_audio.mediaplayer.view.BottomMusicView
       android:id="@+id/bottom_view"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"

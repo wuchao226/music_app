@@ -27,21 +27,6 @@
       </intent-filter>
     </activity>
 
-    <activity
-      android:name=".view.InstallPermissionActivity"
-      android:theme="@style/activity_translucent" />
-
-    <!--文件共享 applicationId：com.wuc.voice-->
-    <provider
-      android:name="androidx.core.content.FileProvider"
-      android:authorities="${applicationId}.fileprovider"
-      android:exported="false"
-      android:grantUriPermissions="true">
-      <meta-data
-        android:name="android.support.FILE_PROVIDER_PATHS"
-        android:resource="@xml/file_paths" />
-    </provider>
-
   </application>
 
 </manifest>

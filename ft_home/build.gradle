@@ -53,8 +53,6 @@ dependencies {
   compileOnly project(':lib_base')
   //视频播放器组件
   compileOnly project(':lib_video')
-  //音频播放器组
-  compileOnly project(':lib_audio')
   //app下载更新库
   compileOnly project(':lib_update')
   //网络请求库

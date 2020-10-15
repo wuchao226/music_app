@@ -1,7 +1,7 @@
 package com.wuc.voice.application;
 
 import com.alibaba.android.arouter.launcher.ARouter;
-import com.wuc.lib_audio.app.AudioHelper;
+import com.wuc.ft_audio.app.AudioHelper;
 import com.wuc.lib_share.share.ShareManager;
 import com.wuc.lib_update.app.UpdateHelper;
 

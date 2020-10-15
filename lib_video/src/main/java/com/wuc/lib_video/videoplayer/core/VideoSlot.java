@@ -9,8 +9,9 @@ import android.widget.RelativeLayout;
 
 import com.alibaba.android.arouter.facade.annotation.Autowired;
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.wuc.lib_base.ft_audio.service.impl.AudioImpl;
 import com.wuc.lib_base.router.RouterPath;
-import com.wuc.lib_base.ft_audio.AudioService;
+import com.wuc.lib_base.ft_audio.service.AudioService;
 import com.wuc.lib_video.videoplayer.constant.VideoConstant;
 import com.wuc.lib_video.videoplayer.core.view.CustomVideoView;
 import com.wuc.lib_video.videoplayer.core.view.VideoFullDialog;
@@ -23,9 +24,6 @@ import com.wuc.lib_video.videoplayer.utils.Utils;
  * @desciption: 视频业务逻辑层
  */
 public class VideoSlot implements CustomVideoView.VideoPlayerListener {
-
-    @Autowired(name = RouterPath.Audio.PATH_AUDIO_SERVICE)
-    protected AudioService mAudioService;
 
     private Context mContext;
     private CustomVideoView mVideoView;
@@ -227,7 +225,7 @@ public class VideoSlot implements CustomVideoView.VideoPlayerListener {
         dialog.setSlotListener(mSlotListener);
         dialog.show();
         //全屏暂停音乐播放
-        mAudioService.pauseAudio();
+        AudioImpl.getInstance().pauseAudio();
     }
 
     /**
@@ -247,7 +245,7 @@ public class VideoSlot implements CustomVideoView.VideoPlayerListener {
         // 标为可自动暂停
         canPause = true;
         //小屏恢复音乐播放
-        mAudioService.resumeAudio();
+        AudioImpl.getInstance().resumeAudio();
     }
 
     /**

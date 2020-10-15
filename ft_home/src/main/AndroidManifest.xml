@@ -14,6 +14,10 @@
       android:name=".view.home.HomeActivity"
       android:launchMode="singleTask" />
 
+    <activity
+      android:name=".view.InstallPermissionActivity"
+      android:theme="@style/activity_translucent" />
+
     <!--文件共享-->
     <provider
       android:name="androidx.core.content.FileProvider"
