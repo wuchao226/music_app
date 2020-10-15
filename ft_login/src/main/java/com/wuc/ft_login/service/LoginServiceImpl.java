@@ -5,8 +5,8 @@ import com.alibaba.android.arouter.facade.annotation.Route;
 import com.wuc.ft_login.LoginActivity;
 import com.wuc.ft_login.manager.UserManager;
 import com.wuc.lib_base.router.RouterPath;
-import com.wuc.lib_base.service.ft_login.LoginService;
-import com.wuc.lib_base.service.ft_login.model.user.User;
+import com.wuc.lib_base.ft_login.LoginService;
+import com.wuc.lib_base.ft_login.model.user.User;
 
 /**
  * @author : wuchao5

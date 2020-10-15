@@ -6,8 +6,8 @@ import com.wuc.ft_login.api.RequestCenter;
 import com.wuc.ft_login.inner.IUserLoginPresenter;
 import com.wuc.ft_login.inner.IUserLoginView;
 import com.wuc.ft_login.manager.UserManager;
-import com.wuc.lib_base.service.ft_login.model.LoginEvent;
-import com.wuc.lib_base.service.ft_login.model.user.User;
+import com.wuc.lib_base.ft_login.model.LoginEvent;
+import com.wuc.lib_base.ft_login.model.user.User;
 import com.wuc.lib_network.okhttp.listener.DisposeDataListener;
 import org.greenrobot.eventbus.EventBus;
 

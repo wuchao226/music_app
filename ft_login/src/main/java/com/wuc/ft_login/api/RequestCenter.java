@@ -1,6 +1,6 @@
 package com.wuc.ft_login.api;
 
-import com.wuc.lib_base.service.ft_login.model.user.User;
+import com.wuc.lib_base.ft_login.model.user.User;
 import com.wuc.lib_network.okhttp.CommonOkHttpClient;
 import com.wuc.lib_network.okhttp.listener.DisposeDataHandle;
 import com.wuc.lib_network.okhttp.listener.DisposeDataListener;

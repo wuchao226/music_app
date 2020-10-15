@@ -88,5 +88,7 @@ dependencies {
     implementation project(':lib_base')
     //login模块
     implementation project(':ft_login')
+    //home模块
+    implementation project(':ft_home')
 
 }

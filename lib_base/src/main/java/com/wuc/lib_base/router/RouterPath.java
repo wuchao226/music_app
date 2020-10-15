@@ -20,6 +20,10 @@ public class RouterPath {
     public static final String PATH_LOGIN = "/login/login_service";
   }
 
+  public class Home {
+    public static final String PATH_HOME = "/home/home_service";
+  }
+
   /**
    * 音频模块
    */

@@ -1,6 +1,6 @@
 package com.wuc.ft_login.manager;
 
-import com.wuc.lib_base.service.ft_login.model.user.User;
+import com.wuc.lib_base.ft_login.model.user.User;
 
 /**
  * @description 单例管理登陆用户信息

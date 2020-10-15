@@ -12,7 +12,7 @@ import android.os.IBinder;
 import com.alibaba.android.arouter.facade.annotation.Autowired;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.wuc.lib_base.router.RouterPath;
-import com.wuc.lib_base.service.update.UpdateNotificationService;
+import com.wuc.lib_base.update.UpdateNotificationService;
 import com.wuc.lib_update.R;
 import com.wuc.lib_update.app.UpdateHelper;
 import com.wuc.lib_update.update.utils.NotificationUtils;

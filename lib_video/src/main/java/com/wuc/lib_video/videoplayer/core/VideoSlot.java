@@ -10,7 +10,7 @@ import android.widget.RelativeLayout;
 import com.alibaba.android.arouter.facade.annotation.Autowired;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.wuc.lib_base.router.RouterPath;
-import com.wuc.lib_base.service.audio.AudioService;
+import com.wuc.lib_base.ft_audio.AudioService;
 import com.wuc.lib_video.videoplayer.constant.VideoConstant;
 import com.wuc.lib_video.videoplayer.core.view.CustomVideoView;
 import com.wuc.lib_video.videoplayer.core.view.VideoFullDialog;

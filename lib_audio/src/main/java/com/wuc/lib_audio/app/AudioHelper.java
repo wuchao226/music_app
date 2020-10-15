@@ -7,8 +7,10 @@ import com.wuc.lib_audio.mediaplayer.core.AudioController;
 import com.wuc.lib_audio.mediaplayer.core.MusicService;
 import com.wuc.lib_audio.mediaplayer.db.GreenDaoHelper;
 import com.wuc.lib_audio.mediaplayer.model.AudioBean;
+import com.wuc.lib_audio.mediaplayer.utils.Utils;
 import com.wuc.lib_audio.mediaplayer.view.MusicPlayerActivity;
 
+import com.wuc.lib_base.ft_audio.model.CommonAudioBean;
 import java.util.ArrayList;
 
 /**
@@ -38,8 +40,8 @@ public final class AudioHelper {
         MusicService.startMusicService(audioBeans);
     }
 
-    public static void addAudio(Activity activity, AudioBean bean) {
-        AudioController.getInstance().addAudio(bean);
+    public static void addAudio(Activity activity, CommonAudioBean bean) {
+        AudioController.getInstance().addAudio(Utils.convertFrom(bean));
         MusicPlayerActivity.start(activity);
     }
 
